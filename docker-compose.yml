@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  llm_application:
+    container_name: llm_application
+    build: ./llm_application
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 8501:8501
+      - 1000:1000
+    volumes:
+      - ./llm_application:/llm_application
